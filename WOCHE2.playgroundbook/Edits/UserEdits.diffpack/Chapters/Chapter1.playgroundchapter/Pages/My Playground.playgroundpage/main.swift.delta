@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//TAG1
+let nightclubName: String = "Syntax Nightclub"
+var isOpen: Bool = true
+let maxGuests: Int = 70
+var currentGuests: Int = 20 
+
+// Abfragen ob der Club geöffnet ist
+if isOpen {
+    print("Der Club ist geöffnet.")
+} else {
+    print("Der Club ist geschlossen.")
+}
+
+// Abfragen ob der Club voll ist
+
+
+// geschlosssen oder VOLl
+if !isOpen || currentGuests &gt;= maxGuests {
+    print("Der Club ist entweder geschlossen oder voll.")
+    print("Keine weiteren Gäste können eintreten.")
+} else {
+    print("Der Club ist geöffnet und es können noch Gäste eintreten.")
+}
+
+
+let guest1: (String, Int) = ("Lukas", 7)
+let guest2: (String, Int) = ("Patrick", 24)
+let guest3: (String, Int) = ("Luca", 25)
+
+
+
+// Abfragen ob der Club geöffnet ist
+if isOpen {
+    print("Der Club ist geöffnet.")
+    
+    if (currentGuests &lt; maxGuests) {
+         print("Weitere Gäste können eintreten.")
+        
+        if guest1.1&lt;18 {
+                print("Kein Eintritt: Gast ist unter 18")
+            }
+            else {
+                print("Gast ist älter als 18 und kann eintreten")
+            }
+    } else {
+             print("Der Club ist VOLL ")
+       
+    }
+    
+    
+} else {
+    print("Der Club ist geschlossen.")
+}
+
+
+// TAG 2
+
+//1
+
+var counter:Int=1; 
+while true {
+    
+  
+    
+    if(counter &lt;= currentGuests){
+        print("Herzlich Willkommen Gast\(counter)")
+        counter+=1; 
+    }
+    else   {
+        break
+    }
+}
+
+
+//"
+
+
+while true{
+    
+    let randomzahl: Int = Int.random(in: 1...3);  
+    if (currentGuests &lt;= 0 || currentGuests == maxGuests){
+          break; 
+      }
+    if (randomzahl==1){
+        currentGuests+=1;
+        print("Es sind \(currentGuests) da"); 
+    }
+    else{
+        currentGuests-=randomzahl;
+        if(currentGuests&lt;0){
+            currentGuests=0; 
+        }
+           print("Es sind \(currentGuests) da"); 
+    }
+    
+  
+}
+
+//TAG 3
+
+var withice = true; 
+var withalkohol = false; 
+var withFruit = true; 
+
+print("Einen Mojito sehr gerne!" )
+
+if withice{
+    print("Es wird Eis ins Glas gegeben")
+}
+
+if withalkohol{
+   print("Es werden 4cl Rum ins Glas gegeben")
+}else{
+    print("Es werden 4cl Limettensaft  ins Glas gegeben")
+}
+
+if withFruit{
+    print("Es wird eine Limettenscheib  ins Glas gegeben")
+}else{
+    print("Es wird brauner Zucker ins Glas gegeben")
+}
+
+print("Das Glas wird mit  Mineralwasser  aufgefüllt")
+print("Die Bestellung ist abgeschlossen")
+
+
+
+//DJ 
+
+let random = Int.random(in: 1...3)
+
+var dancer = 4 ; 
+
+while true{
+    if dancer&gt;5{
+        print("Der nächste Song wird gespielt")
+     let random = Int.random(in: 1...3)
+        if random%2==0{
+           print("Ein gast kommt auf die Tanzfläche dazu")
+            dancer+=1; 
+        }else{
+            print("Zwei Gäste verlassen die tanzfläche ")
+            dancer-=2; 
+        }
+                
+    }else{
+        print("Der Rausschmeißer wird gespielt")
+                print("Party ist beendet")
+                break
+    }
+}
+
+
+// Tag 4 
+
+
+func einlass(let guest: (String,Int)){
+    
+    if isOpen {
+        print("Der Club ist geöffnet.")
+        
+        if (currentGuests &lt; maxGuests) {
+             print("Weitere Gäste können eintreten.")
+            
+            if guest.1&lt;18 {
+                    print("Kein Eintritt: Gast ist unter 18")
+                }
+                else {
+                    print("Gast ist älter als 18 und kann eintreten")
+                }
+        } else {
+                 print("Der Club ist VOLL ")
+           
+        }
+        
+        
+    } else {
+        print("Der Club ist geschlossen.")
+    }
+}
+
+
+einlass(let: guest1);
+einlass(let: guest2); 
+einlass(let: guest3);
+
+
+func cocktail(var withice :Bool,var withalkohol: Bool,var withFruit:Bool){
+    
+    print("Einen Mojito sehr gerne!" )
+
+    if withice{
+        print("Es wird Eis ins Glas gegeben")
+    }
+
+    if withalkohol{
+       print("Es werden 4cl Rum ins Glas gegeben")
+    }else{
+        print("Es werden 4cl Limettensaft  ins Glas gegeben")
+    }
+
+    if withFruit{
+        print("Es wird eine Limettenscheib  ins Glas gegeben")
+    }else{
+        print("Es wird brauner Zucker ins Glas gegeben")
+    }
+
+    print("Das Glas wird mit  Mineralwasser  aufgefüllt")
+    print("Die Bestellung ist abgeschlossen")
+
+}
+
+cocktail(var: true, var: false, var: false)
+
+
+func calc(x: Double, y: Double, z: Double) -&gt; Double {
+    var zahl1: Double = 0
+    var zahl2: Double = 0
+    var zahl3: Double = 0
+    
+    if x &gt; 0 {
+        zahl1 = x
+    }
+    if y &gt; 0 {
+        zahl2 = y
+    }
+    if z &gt; 0 {
+        zahl3 = z
+    }
+    
+    return zahl1 + zahl2 + zahl3
+}
+
+print(calc(x: 3.5, y: -4.5, z:5.0))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 4612}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
